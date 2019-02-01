@@ -11,11 +11,11 @@ Estas herramientas me han sido útiles en pentesting (tanto caja negra como blan
   - [Índice](#%C3%ADndice)
   - [Cumplimiento CIS](#cumplimiento-cis)
     - [AWS CIS](#aws-cis)
-      - [**_Prowler_**](#prowler)
-      - [**_AWS Inspector_**](#aws-inspector)
+      - [Prowler](#prowler)
+      - [AWS Inspector](#aws-inspector)
     - [Azure CIS](#azure-cis)
     - [Docker CIS](#docker-cis)
-      - [**_Docker Bench for Security_**](#docker-bench-for-security)
+      - [Docker Bench for Security](#docker-bench-for-security)
     - [Kubernetes CIS](#kubernetes-cis)
 
 ---
@@ -24,7 +24,7 @@ Estas herramientas me han sido útiles en pentesting (tanto caja negra como blan
 
 ### AWS CIS
 
-#### [**_Prowler_**](https://github.com/toniblyx/prowler)
+#### [Prowler](https://github.com/toniblyx/prowler)
 
 Es una herramienta en python que permite realizar un análisis del grado de cumplimiento con el bastionado CIS de el entorno en AWS además de diferentes grupos de checks predefinidos relacionados con el control IAM, monitorización, logging, forense entre otros.
 
@@ -32,7 +32,7 @@ Permite exportar los resultados en múltiples formatos (CSV, JSON, TXT, etc.)
 
 ![alt text](./img/prowler.png)
 
-#### [**_AWS Inspector_**](http://console.aws.amazon.com/inspector/)
+#### [AWS Inspector](http://console.aws.amazon.com/inspector/)
 
 Herramienta que permite realizar análisis de vulnerabilidades, cumplimiento CIS, nivel de exposición desde internet, etc. en las instancias virtuales de AWS. Trae implementado por defecto cinco tipos de escaneos: Runtime Behavior Analysis, Security Best Practices, Network Reachability, CIS Operating System Security Configuration Benchmarks (no están soportados todos los S.O.) y Common Vulnerabilities and Exposures aunque también se pueden crear plantillas de análisis personalizadas.
 
@@ -58,7 +58,7 @@ Para obtenerlo, no basta solo con activar el Security Center e instalar los agen
 
 ### Docker CIS
 
-#### [**_Docker Bench for Security_**](https://github.com/docker/docker-bench-security)
+#### [Docker Bench for Security](https://github.com/docker/docker-bench-security)
 
 Este script comprueba automáticamente las buenas prácticas en el despligue de Dockers inspirado en el CIS Docker Community Edition Benchmark v1.1.0.
 
