@@ -3,9 +3,26 @@ Recopilación de herramientas complementarias para auditoría de Docker, K8, AWS
 
 Estas herramientas me han sido útiles en pentesting (tanto caja negra como blanca) y en la revisión de la seguridad de diferentes entornos y diferentes tecnologías.
 
-## Herramientas para determinar el estado de cumplimiento CIS
+---
 
-### AWS
+## Índice
+
+- [DevSecOps Tools](#devsecops-tools)
+  - [Índice](#%C3%ADndice)
+  - [Cumplimiento CIS](#cumplimiento-cis)
+    - [AWS CIS](#aws-cis)
+      - [**_Prowler_**](#prowler)
+      - [**_AWS Inspector_**](#aws-inspector)
+    - [Azure CIS](#azure-cis)
+    - [Docker CIS](#docker-cis)
+      - [**_Docker Bench for Security_**](#docker-bench-for-security)
+    - [Kubernetes CIS](#kubernetes-cis)
+
+---
+
+## Cumplimiento CIS
+
+### AWS CIS
 
 #### [**_Prowler_**](https://github.com/toniblyx/prowler)
 
@@ -25,7 +42,7 @@ En la sección "Hallazgos" están los resultados de los análisis ejecutados.
 
 ![alt text](./img/inspector.png)
 
-### Azure
+### Azure CIS
 
 Aunque el benchmark CIS de Azure está definido y es posible encontrar y descargasr los benchmarks en diferentes formatos no he localizado ninguna herramienta que lo tenga incorporado, ni siquiera está en Nessus.
 
@@ -39,7 +56,7 @@ Para obtenerlo, no basta solo con activar el Security Center e instalar los agen
 
 ![alt text](./img/azure3.png)
 
-### Docker
+### Docker CIS
 
 #### [**_Docker Bench for Security_**](https://github.com/docker/docker-bench-security)
 
@@ -58,4 +75,4 @@ docker run -it --net host --pid host --userns host --cap-add audit_control \
 ```
 ![alt text](./img/docker.png)
 
-### Kubernetes
+### Kubernetes CIS
