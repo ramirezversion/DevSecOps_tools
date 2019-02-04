@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+</head>
+<body>
+<h1 id="devsecops-tools">DevSecOps Tools</h1>
+<p>Recopilación de herramientas complementarias para auditoría de Docker, K8, AWS, etc.</p>
+<p>Estas herramientas me han sido útiles en pentesting (tanto caja negra como blanca) y en la revisión de la seguridad de diferentes entornos y diferentes tecnologías.</p>
+<hr>
+<h2 id="%C3%ADndice">Índice</h2>
+<ul>
+<li><a href="#devsecops-tools">DevSecOps Tools</a>
+<ul>
+<li><a href="#%C3%ADndice">Índice</a></li>
+<li><a href="#cumplimiento-cis">Cumplimiento CIS</a>
+<ul>
+<li><a href="#aws-cis">AWS CIS</a>
+<ul>
+<li><a href="#prowler">Prowler</a></li>
+<li><a href="#aws-inspector">AWS Inspector</a></li>
+</ul>
+</li>
+<li><a href="#azure-cis">Azure CIS</a></li>
+<li><a href="#docker-cis">Docker CIS</a>
+<ul>
+<li><a href="#docker-bench-for-security">Docker Bench for Security</a></li>
+</ul>
+</li>
+<li><a href="#kubernetes-cis">Kubernetes CIS</a>
+<ul>
+<li><a href="#kube-bench">Kube Bench</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#vulnerabilidades">Vulnerabilidades</a>
+<ul>
+<li><a href="#aws-vulnerabilidades">AWS Vulnerabilidades</a></li>
+<li><a href="#azure-vulnerabilidades">Azure Vulnerabilidades</a></li>
+<li><a href="#docker-vulnerabilidades">Docker Vulnerabilidades</a>
+<ul>
+<li><a href="#aquasec-microscanner-wrapper">Aquasec Microscanner Wrapper</a></li>
+<li><a href="#dockscan">DockScan</a></li>
+<li><a href="#docker-scan">Docker Scan</a></li>
+</ul>
+</li>
+<li><a href="#kubernetes-vulnerabilidades">Kubernetes Vulnerabilidades</a>
+<ul>
+<li><a href="#kube-hunter">Kube Hunter</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="cumplimiento-cis">Cumplimiento CIS</h2>
+<h3 id="aws-cis">AWS CIS</h3>
+<h4 id="prowler"><a href="https://github.com/toniblyx/prowler">Prowler</a></h4>
+<p>Es una herramienta en python que permite realizar un análisis del grado de cumplimiento con el bastionado CIS de el entorno en AWS además de diferentes grupos de checks predefinidos relacionados con el control IAM, monitorización, logging, forense entre otros.</p>
+<p>Permite exportar los resultados en múltiples formatos (CSV, JSON, TXT, etc.)</p>
+<p><img src="file:///c:/Users/ramirezversion/Desktop/DevSecOps_tools/img/prowler.png" alt=""></p>
+<h4 id="aws-inspector"><a href="http://console.aws.amazon.com/inspector/">AWS Inspector</a></h4>
+<p>Herramienta que permite realizar análisis de vulnerabilidades, cumplimiento CIS, nivel de exposición desde internet, etc. en las instancias virtuales de AWS. Trae implementado por defecto cinco tipos de escaneos: Runtime Behavior Analysis, Security Best Practices, Network Reachability, CIS Operating System Security Configuration Benchmarks (no están soportados todos los S.O.) y Common Vulnerabilities and Exposures aunque también se pueden crear plantillas de análisis personalizadas.</p>
+<p>Para ejecutarlo hay que instalar el agente de Inspector en las máquinas virtuales y usando la propia interfaz web de la herramienta definir un &quot;Objetivo de Evaluación&quot; indicando el conjunto de instancias virtuales sobre las que realizar el análisis, definir la &quot;Plantilla de Evaluación&quot; para indicar el/los tipo/s de análisis a correr y una &quot;Ejecución&quot; en donde se puede lanzar manualmente o programar una tarea periódica para que se realice automáticamente.</p>
+<p>En la sección &quot;Hallazgos&quot; están los resultados de los análisis ejecutados.</p>
+<p><img src="file:///c:/Users/ramirezversion/Desktop/DevSecOps_tools/img/inspector.png" alt=""></p>
+<h3 id="azure-cis">Azure CIS</h3>
+<p>Aunque el benchmark CIS de Azure está definido y es posible encontrar y descargasr los benchmarks en diferentes formatos no he localizado ninguna herramienta que lo tenga incorporado, ni siquiera está en Nessus.</p>
+<p><img src="file:///c:/Users/ramirezversion/Desktop/DevSecOps_tools/img/azure1.png" alt=""></p>
+<p>Es posible obtener este grado de cumplimiento a través de la herramienta &quot;Security Center&quot; integrada en la propia suscripción de Azure la cual además muestra el estado referente al cumplimiento PCI DSS, ISO 27001 y SOC TSP.</p>
+<p><img src="file:///c:/Users/ramirezversion/Desktop/DevSecOps_tools/img/azure2.png" alt=""></p>
+<p>Para obtenerlo, no basta solo con activar el Security Center e instalar los agentes de monitorización en todos los nodos sino que hay que hacer uso de la versión &quot;Standard&quot; (de pago). Lo bueno que Microsoft deja un mes de prueba gratis para esta versión completa de Security Center y una vez lo tengamos es posible volverlo a desactivar.</p>
+<p><img src="file:///c:/Users/ramirezversion/Desktop/DevSecOps_tools/img/azure3.png" alt=""></p>
+<h3 id="docker-cis">Docker CIS</h3>
+<h4 id="docker-bench-for-security"><a href="https://github.com/docker/docker-bench-security">Docker Bench for Security</a></h4>
+<p>Este script comprueba automáticamente las buenas prácticas en el despligue de Dockers inspirado en el CIS Docker Community Edition Benchmark v1.1.0.</p>
+<p>La manera más sencilla de correr esta herramienta es haciendo uso del contenedor ya definido por ellos el cual se puede correr en el host que queramos comprobar. Antes de ello hay que ajustar los volúmenes a compartir con el Docker para ajustarlos según el S.O. que se vaya a auditar.</p>
+<pre class="hljs"><code><div>docker run -it --net host --pid host --userns host --<span class="hljs-built_in">cap</span>-add audit_control \
+    -e DOCKER_CONTENT_TRUST=<span class="hljs-variable">$DOCKER_CONTENT_TRUST</span> \
+    -v /var/lib:/var/lib \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v /usr/lib/systemd:/usr/lib/systemd \
+    -v /etc:/etc --label docker_bench_security \
+    docker/docker-bench-security
+</div></code></pre>
+<p><img src="file:///c:/Users/ramirezversion/Desktop/DevSecOps_tools/img/docker.png" alt=""></p>
+<h3 id="kubernetes-cis">Kubernetes CIS</h3>
+<h4 id="kube-bench"><a href="https://github.com/aquasecurity/kube-bench">Kube Bench</a></h4>
+<p>Para determinar el grado de cumplimiento CIS para Kubernetes se puede utilizar la herramienta kube-bench desarrollada en Go la cual realiza una comprobación de los checks definidos en CIS Kubernetes Benchmark aunque también permite añadir test personalizados a través de ficheros de configuración YAML.</p>
+<p>Esta herramienta soporta test para múltiples versiones de Kubernetes (1.6, 1.7, 1.8, and 1.11) definidas en las guías CIS 1.0.0, 1.1.0, 1.2.0, y 1.3.0 respectivamente.</p>
+<p>La forma más sencilla de ejecutar esta herramienta es ejecutarlo desde un contenedor y lanzar las pruebas sobre el clúster de K8.</p>
+<pre class="hljs"><code><div>docker run --pid=host -v /etc:/etc:ro -v /var:/var:ro -t aquasec/kube-bench:latest &lt;master|node&gt;
+</div></code></pre>
+<p>Es posible también lanzarlo sobre un clúster de Kubernetes o sobre un POD en concreto indicándolo a través de los archivos YAML job-master y job-node proporcionados.</p>
+<pre class="hljs"><code><div>$ kubectl apply -f job-master.yaml 
+job.batch/kube-bench-master created
+
+$ kubectl get pods
+NAME                      READY   STATUS              RESTARTS   AGE
+kube-bench-master-j76s9   0/1     ContainerCreating   0          3s
+
+<span class="hljs-comment"># Wait for a few seconds for the job to complete</span>
+$ kubectl get pods
+NAME                      READY   STATUS      RESTARTS   AGE
+kube-bench-master-j76s9   0/1     Completed   0          11s
+
+<span class="hljs-comment"># The results are held in the pod's logs</span>
+k logs kube-bench-master-j76s9
+[INFO] 1 Master Node Security Configuration
+[INFO] 1.1 API Server
+...
+</div></code></pre>
+<p><img src="file:///c:/Users/ramirezversion/Desktop/DevSecOps_tools/img/cisk8.png" alt=""></p>
+<h2 id="vulnerabilidades">Vulnerabilidades</h2>
+<h3 id="aws-vulnerabilidades">AWS Vulnerabilidades</h3>
+<p>En este caso, se puede utilizar directamente uno de los tipos de escáneres definidios en <a href="#aws-inspector">AWS Inspector</a> específico para ello.</p>
+<h3 id="azure-vulnerabilidades">Azure Vulnerabilidades</h3>
+<p>Para el análisis de las vulnerabilidades de los diferentes componentes desplegados en Azure es posible obtenerlas a través del Security Center <a href="#azure-cis">Azure CIS</a>.</p>
+<p><img src="file:///c:/Users/ramirezversion/Desktop/DevSecOps_tools/img/azure4.png" alt=""></p>
+<h3 id="docker-vulnerabilidades">Docker Vulnerabilidades</h3>
+<h4 id="aquasec-microscanner-wrapper"><a href="https://github.com/lukebond/microscanner-wrapper">Aquasec Microscanner Wrapper</a></h4>
+<p>Esta herramienta permite analizar las imágenes creadas o utilizadas en Docker para obtener un listado de vulnerabilidades conocidas que hay en los componentes que integran.</p>
+<p>Tras registrar un token hay que pasárselo a la herramienta en una variable de entorno y directamente lanzarla contra la imagen que queremos analizar. Permite obtener la salida en formato JSON o HTML.</p>
+<pre class="hljs"><code><div>$ MICROSCANNER_TOKEN=xxxxxxxxxxxxxxxx ./scan.sh aquasec/microscanner
+</div></code></pre>
+<p><img src="file:///c:/Users/ramirezversion/Desktop/DevSecOps_tools/img/microscanner.png" alt=""></p>
+<h4 id="dockscan"><a href="https://github.com/kost/dockscan">DockScan</a></h4>
+<p>Esta herramienta está desarrollada en Ruby.</p>
+<pre class="hljs"><code><div>gem install dockscan
+</div></code></pre>
+<p>A continuación se muestran algunos ejemplos típicos de uso de la herramienta.</p>
+<p>Para realizar un escaneo local de la instalación de Docker</p>
+<pre class="hljs"><code><div>dockscan unix:///var/run/docker.sock
+</div></code></pre>
+<p>Para realizar un escaneo remoto y guardar la salida en formato HTML</p>
+<pre class="hljs"><code><div>dockscan -r html -o myreport -v tcp://example.com:5422
+</div></code></pre>
+<p>Para realizar un escaneo remoto y guardar la salida en formato TXT</p>
+<pre class="hljs"><code><div>dockscan -r txt -o myreport -v tcp://example.com:5422
+</div></code></pre>
+<p><img src="file:///c:/Users/ramirezversion/Desktop/DevSecOps_tools/img/dockscan.png" alt=""></p>
+<h4 id="docker-scan"><a href="https://github.com/cr0hn/dockerscan">Docker Scan</a></h4>
+<p>Esta herramienta en python permite escanear una red para tratar de localizar Docker Registries para tratar de obtener información, borrar imágenes o subir las nuestras propias y además permite analizar imágenes para buscar información sensible o tratar de modificarlas para inyectar por ejemplo una shell reversa en ellas.</p>
+<p><img src="file:///c:/Users/ramirezversion/Desktop/DevSecOps_tools/img/dockscan2.png" alt=""></p>
+<h3 id="kubernetes-vulnerabilidades">Kubernetes Vulnerabilidades</h3>
+<h4 id="kube-hunter"><a href="https://github.com/aquasecurity/kube-hunter">Kube Hunter</a></h4>
+<p>Esta herramienta permite realizar un análisis de vulnerabilidades y debilidades en una instalación de Kubernetes. Permite escaneo remoto, interno o por CIDR sobre un clúster de K8. Además incorpora una opción &quot;Activa&quot; a través de la cual trata de explotar los hallazgos.</p>
+<p>Se puede correr en local o a través del despliegue de un contener que ya viene preparado con todo.</p>
+<p><img src="file:///c:/Users/ramirezversion/Desktop/DevSecOps_tools/img/dockscan2.png" alt=""></p>
+<p>Un ejemplo de lo que es posible obtener y hasta donde comprometer una infraestructura se puede ver en el siguiente artículo del blog UN INFORMÁTICO EN EL LADO DEL MAL.</p>
+<p><a href="http://www.elladodelmal.com/2019/01/hacking-kubernetes-auditoria-de.html">Hacking Kubernetes: Auditoría de seguridad y Explotación de vulnerabilidades</a></p>
+
+</body>
+</html>
