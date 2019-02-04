@@ -24,6 +24,7 @@ Estas herramientas me han sido útiles en pentesting (tanto caja negra como blan
     - [Docker Vulnerabilidades](#docker-vulnerabilidades)
       - [Aquasec Microscanner Wrapper](#aquasec-microscanner-wrapper)
       - [DockScan](#dockscan)
+      - [Docker Scan](#docker-scan)
 
 ---
 
@@ -171,3 +172,8 @@ dockscan -r txt -o myreport -v tcp://example.com:5422
 
 ![](./img/dockscan.png)
 
+#### [Docker Scan](https://github.com/cr0hn/dockerscan)
+
+Esta herramienta en python permite escanear una red para tratar de localizar Docker Registries para tratar de obtener información, borrar imágenes o subir las nuestras propias y además permite analizar imágenes para buscar información sensible o tratar de modificarlas para inyectar por ejemplo una shell reversa en ellas.
+
+![](./img/dockscan2.png)
