@@ -18,6 +18,12 @@ Estas herramientas me han sido útiles en pentesting (tanto caja negra como blan
       - [Docker Bench for Security](#docker-bench-for-security)
     - [Kubernetes CIS](#kubernetes-cis)
       - [Kube Bench](#kube-bench)
+  - [Vulnerabilidades](#vulnerabilidades)
+    - [AWS Vulnerabilidades](#aws-vulnerabilidades)
+    - [Azure Vulnerabilidades](#azure-vulnerabilidades)
+    - [Docker Vulnerabilidades](#docker-vulnerabilidades)
+      - [Aquasec Microscanner Wrapper](#aquasec-microscanner-wrapper)
+      - [DockScan](#dockscan)
 
 ---
 
@@ -112,3 +118,56 @@ k logs kube-bench-master-j76s9
 ...
 ```
 ![](./img/cisk8.png)
+
+## Vulnerabilidades
+
+### AWS Vulnerabilidades
+
+En este caso, se puede utilizar directamente uno de los tipos de escáneres definidios en [AWS Inspector](#aws-inspector) específico para ello.
+
+### Azure Vulnerabilidades
+
+Para el análisis de las vulnerabilidades de los diferentes componentes desplegados en Azure es posible obtenerlas a través del Security Center [Azure CIS](#azure-cis).
+
+![](./img/azure4.png)
+
+### Docker Vulnerabilidades
+
+#### [Aquasec Microscanner Wrapper](https://github.com/lukebond/microscanner-wrapper)
+
+Esta herramienta permite analizar las imágenes creadas o utilizadas en Docker para obtener un listado de vulnerabilidades conocidas que hay en los componentes que integran.
+
+Tras registrar un token hay que pasárselo a la herramienta en una variable de entorno y directamente lanzarla contra la imagen que queremos analizar. Permite obtener la salida en formato JSON o HTML.
+
+```bash
+$ MICROSCANNER_TOKEN=xxxxxxxxxxxxxxxx ./scan.sh aquasec/microscanner
+```
+![](./img/microscanner.png)
+
+#### [DockScan](https://github.com/kost/dockscan)
+
+Esta herramienta está desarrollada en Ruby.
+
+```
+gem install dockscan
+```
+
+A continuación se muestran algunos ejemplos típicos de uso de la herramienta.
+
+Para realizar un escaneo local de la instalación de Docker
+``` bash
+dockscan unix:///var/run/docker.sock
+```
+
+Para realizar un escaneo remoto y guardar la salida en formato HTML
+```bash
+dockscan -r html -o myreport -v tcp://example.com:5422
+```
+
+Para realizar un escaneo remoto y guardar la salida en formato TXT
+```bash
+dockscan -r txt -o myreport -v tcp://example.com:5422
+```
+
+![](./img/dockscan.png)
+
