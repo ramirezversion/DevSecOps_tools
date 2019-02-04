@@ -25,6 +25,8 @@ Estas herramientas me han sido útiles en pentesting (tanto caja negra como blan
       - [Aquasec Microscanner Wrapper](#aquasec-microscanner-wrapper)
       - [DockScan](#dockscan)
       - [Docker Scan](#docker-scan)
+    - [Kubernetes Vulnerabilidades](#kubernetes-vulnerabilidades)
+      - [Kube Hunter](#kube-hunter)
 
 ---
 
@@ -177,3 +179,17 @@ dockscan -r txt -o myreport -v tcp://example.com:5422
 Esta herramienta en python permite escanear una red para tratar de localizar Docker Registries para tratar de obtener información, borrar imágenes o subir las nuestras propias y además permite analizar imágenes para buscar información sensible o tratar de modificarlas para inyectar por ejemplo una shell reversa en ellas.
 
 ![](./img/dockscan2.png)
+
+### Kubernetes Vulnerabilidades
+
+#### [Kube Hunter](https://github.com/aquasecurity/kube-hunter)
+
+Esta herramienta permite realizar un análisis de vulnerabilidades y debilidades en una instalación de Kubernetes. Permite escaneo remoto, interno o por CIDR sobre un clúster de K8. Además incorpora una opción "Activa" a través de la cual trata de explotar los hallazgos.
+
+Se puede correr en local o a través del despliegue de un contener que ya viene preparado con todo.
+
+![](./img/dockscan2.png)
+
+Un ejemplo de lo que es posible obtener y hasta donde comprometer una infraestructura se puede ver en el siguiente artículo del blog UN INFORMÁTICO EN EL LADO DEL MAL.
+
+[Hacking Kubernetes: Auditoría de seguridad y Explotación de vulnerabilidades](http://www.elladodelmal.com/2019/01/hacking-kubernetes-auditoria-de.html)
